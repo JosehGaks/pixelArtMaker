@@ -33,7 +33,9 @@ function makeGrid(gridSizeHeight, gridSizeWidth) {
 }
 
 const changePixelColor = (event) => {
-  event.target.style.backgroundColor = colorInput.value;
+  if (event.target.nodeName === "TD") {
+    event.target.style.backgroundColor = colorInput.value;
+  }
 };
 
 table.addEventListener("click", changePixelColor);
